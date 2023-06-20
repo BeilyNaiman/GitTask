@@ -1,0 +1,11 @@
+{
+  "name": "git",
+  "version": "1.0.0",
+  "description": "gittask",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app "
+  },
+  "author": "",
+  "license": "ISC"
+}
