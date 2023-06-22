@@ -12,21 +12,22 @@ class user {
             throw new Error("one or more the details are wrong");
         if (this.phone.length != 10)
             throw new Error("wrong in number phone");
-        if (!this.email.includs('@'))
-            throw new Error("invalid email");
+        // if (!this.email.includs('@'))
+        //     throw new Error("invalid email");
     }
 
 }
-const users = [];
+const users = [{nama:"joijgirjig",phone:"kodfihei"}];
 
 function createUser(name, email, phone, dateOfBirth) {
-    let user = new user(name, email, phone, dateOfBirth);
-    user.validate();
-    users.push(user);
-    return user;
+    let user1 = new user(name, email, phone, dateOfBirth);
+    user1.validate();
+    users.push(user1);
+    return user1;
 }
 
 function getUsers(){
+    console.log("gettttttttttttttt");
     return users;
 }
 

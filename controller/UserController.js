@@ -2,8 +2,10 @@ const { createUser } = require('../modules/user');
 const User = require('../modules/user');
 const controller={
 
-    getAllUsers: async (req, res) => {
-       res.status(200).json(User.getUsers);
+    getAllUsers: async(req, res) => {
+
+      let users= await User.getUsers;
+       res.status(200).json(users);
     },
 
     getUserById: async (req, res) => {
@@ -23,8 +25,10 @@ const controller={
       },
 
       addUser:(req,res)=>{
+        console.log("yugyyfy");
         let user=req.body;
-      res.status(201).json  (User.createUser(user.name, user.email, user.phone, user.dateOfBirth));
+      let newUser=  User.createUser(user.name, user.email, user.phone, user.dateOfBirth)
+      res.status(201).json  (newUser);
       },
 
       deleteUser:(req,res)=>{
