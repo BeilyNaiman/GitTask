@@ -1,5 +1,5 @@
 const { createUser } = require('../modules/user');
-const User = require('./moduls/user');
+const User = require('../modules/user');
 const controller={
 
     getAllUsers: async (req, res) => {

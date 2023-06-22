@@ -1,6 +1,4 @@
 
-
-
 const router=require('./router/userRouter') 
 const express=require('express')
 const app=express()
