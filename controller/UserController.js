@@ -3,8 +3,7 @@ const User = require('../modules/user');
 const controller={
 
     getAllUsers: async(req, res) => {
-
-      let users= await User.getUsers;
+      let users= await User.getUsers();
        res.status(200).json(users);
     },
 

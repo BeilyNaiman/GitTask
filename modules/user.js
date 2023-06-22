@@ -1,23 +1,42 @@
+const Hebcal = require('hebcal');
+// const libphonenumber = require('google-libphonenumber');
+const { v4: uuidv4 } = require('uuid');
+
+
+const phoneUtil = require('google-libphonenumber').PhoneNumberUtil.getInstance()
+
+ 
+
+
+
+// const phoneUtil = libphonenumber.PhoneNumberUtil.getInstance();
+
 class user {
     constructor(name, email, phone, dateOfBirth) {
         this.name = name,
             this.email = email,
             this.phone = phone,
             this.dateOfBirth = dateOfBirth,
-            this.id = users.length + 1
+            this.id = uuidv4();
 
     }
     validate() {
         if (!(this.name && this.email && this.dateOfBirth))
             throw new Error("one or more the details are wrong");
-        if (this.phone.length != 10)
-            throw new Error("wrong in number phone");
+        // if (this.phone.length != 10)
+        //     throw new Error("wrong in number phone");
         // if (!this.email.includs('@'))
         //     throw new Error("invalid email");
+        //   if (!phoneUtil.isValidNumberForRegion(phoneUtil.parse(this.phoneNumber, 'IL'), 'IL')) 
+        //     throw new Error('The phone number is invalid');
+        const phoneNumber = phoneUtil.parse(user.phone, 'IL');
+        if (!phoneUtil.isValidNumberForRegion(phoneNumber, 'IL')); 
+        return 'Invalid phone num';
+          
     }
 
 }
-const users = [{nama:"joijgirjig",phone:"kodfihei"}];
+const users = [{nama:"joijgirjig",phone:"kodfihei",id:"123"}];
 
 function createUser(name, email, phone, dateOfBirth) {
     let user1 = new user(name, email, phone, dateOfBirth);
