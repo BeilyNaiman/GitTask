@@ -9,3 +9,7 @@ app.use(express.json());
 app.use(router);
 app.listen(PORT,()=>console.log("server is running in port "))
 
+console.log("check")
+
+
+
